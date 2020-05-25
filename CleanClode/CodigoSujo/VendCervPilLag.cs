@@ -8,7 +8,7 @@ namespace CleanClode.CodigoSujo
         /// Função que vende as cervejas
         /// por tipo, preço unitario e quantidade
         /// com os tipos pilsen e lagger, retornando 
-        /// o valor da venda atravé da multiplicação
+        /// o valor da venda através da multiplicação
         /// do preço unitário * quantidade
         /// </summary>
         /// <param name="tpCerv"></param>
