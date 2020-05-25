@@ -18,13 +18,26 @@ namespace CleanClode.CodigoSujo
         /// <returns></returns>
         public static decimal VdCerv(int tpCerv, decimal prcPilUn, decimal prcLagUn, int qt)
         {
-            if (tpCerv == 1)
-                return qt * prcPilUn;
+            decimal result = 0;
 
+            if (tpCerv == 1)
+            {
+                if (qt >= 10)
+                    result = (qt * prcPilUn) - (((qt * prcPilUn)/100)*30);
+                else
+                    result = qt * prcPilUn;
+            }
             else if (tpCerv == 2)
-                return qt * prcLagUn;
+            {
+                if (qt >= 10)
+                    result = (qt * prcLagUn) - (((qt * prcLagUn) / 100) * 30);
+                else
+                    result = qt * prcLagUn;
+            }
             else
                 throw new Exception("Informe um tipo de cerveja");
+
+            return result;
         }
     }
 }
