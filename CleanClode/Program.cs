@@ -1,7 +1,6 @@
 ﻿using System;
 using CleanClode.CodigoSujo;
 using CleanClode.CodigoLimpo;
-using System.Runtime.ConstrainedExecution;
 
 namespace CleanClode
 {
