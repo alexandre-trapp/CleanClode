@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanClode", "CleanClode\CleanClode.csproj", "{70E08656-04BC-4560-BC58-3DE233FF2B6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogisticaCerveja", "LogisticaCerveja\LogisticaCerveja.csproj", "{0EF5E93B-CC10-46F3-BE99-715D8BD69BD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogisticaCerveja", "LogisticaCerveja\LogisticaCerveja.csproj", "{0EF5E93B-CC10-46F3-BE99-715D8BD69BD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogisticaCervejaTests.cs", "LogisticaCervejaTests.cs\LogisticaCervejaTests.cs.csproj", "{28F2F185-A6F3-4A28-93D3-297A4F7376E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0EF5E93B-CC10-46F3-BE99-715D8BD69BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EF5E93B-CC10-46F3-BE99-715D8BD69BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EF5E93B-CC10-46F3-BE99-715D8BD69BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F2F185-A6F3-4A28-93D3-297A4F7376E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F2F185-A6F3-4A28-93D3-297A4F7376E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F2F185-A6F3-4A28-93D3-297A4F7376E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F2F185-A6F3-4A28-93D3-297A4F7376E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

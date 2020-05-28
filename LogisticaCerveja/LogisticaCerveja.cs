@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LogisticaCerveja
+namespace LogisticaCerveja 
 {
-    public class LogisticaCerveja
+    public class LogisticaCerveja 
     {
-        private static List<Cerveja> _cervejasVendidas;
+        private static List<Cerveja> _listagemCervejasVendidas;
         private static int _quantidadeTotalCervejasVendidas;
 
-        public static void EfetuarProcessoDeLogisticaDaCervejaPilsenELagger()
+        public static void EfetuarProcessoDeLogisticaDaCervejaPilsenELagger() 
         {
             var materiaPrima = ColetarMateriaPrima();
 
@@ -17,18 +17,19 @@ namespace LogisticaCerveja
 
             var cervejasVendidasPilsen = VenderCervejasPilsen(cervejaPilsen);
             var cervejasVendidasLagger = VenderCervejasLagger(cervejaLagger);
-            
-            AdicionarCervejasVendidasNaLista(cervejasVendidasPilsen, 
-                cervejasVendidasLagger);
 
-            var transporte = TransportarCervejas();
+            _listagemCervejasVendidas = ObterListagemDeCervejasVendidas(
+                                            cervejasVendidasPilsen,
+                                            cervejasVendidasLagger);
 
-            EntregarCervejas(transporte);
+            var transporte = TransportarCervejasParaOPdv();
+
+            EntregarCervejasAoPdv(transporte);
         }
 
-        private static MateriaPrima ColetarMateriaPrima()
+        private static MateriaPrima ColetarMateriaPrima() 
         {
-            return new MateriaPrima
+            return new MateriaPrima 
             {
                 Agua = true,
                 Fermento = true,
@@ -37,17 +38,17 @@ namespace LogisticaCerveja
             };
         }
 
-        private static CervejaPilsen FabricarCervejaPilsen(MateriaPrima materiaPrima)
+        private static CervejaPilsen FabricarCervejaPilsen(MateriaPrima materiaPrima) 
         {
             return new CervejaPilsen(materiaPrima);
         }
 
-        private static CervejaLagger FabricarCervejaLagger(MateriaPrima materiaPrima)
+        private static CervejaLagger FabricarCervejaLagger(MateriaPrima materiaPrima) 
         {
             return new CervejaLagger(materiaPrima);
         }
 
-        private static List<Cerveja> VenderCervejasPilsen(Cerveja cervejaPilsen)
+        private static List<Cerveja> VenderCervejasPilsen(Cerveja cervejaPilsen) 
         {
             Console.WriteLine("Informe a quantidade de cerveja pilsen: ");
 
@@ -57,7 +58,7 @@ namespace LogisticaCerveja
             return VendaCerveja.Vender(cervejaPilsen, quantidade);
         }
 
-        private static List<Cerveja> VenderCervejasLagger(Cerveja cervejaLagger)
+        private static List<Cerveja> VenderCervejasLagger(Cerveja cervejaLagger) 
         {
             Console.WriteLine("Informe a quantidade de cerveja pilsen: ");
 
@@ -67,24 +68,26 @@ namespace LogisticaCerveja
             return VendaCerveja.Vender(cervejaLagger, quantidade);
         }
 
-        private static void AdicionarCervejasVendidasNaLista(List<Cerveja> cervejasVendidasPilsen, 
-            List<Cerveja> cervejasVendidasLagger)
+        private static List<Cerveja> ObterListagemDeCervejasVendidas(
+            List<Cerveja> cervejasVendidasPilsen,List<Cerveja> cervejasVendidasLagger) 
         {
-            _cervejasVendidas = new List<Cerveja>();
+            var cervejasVendidas = new List<Cerveja>();
 
-            _cervejasVendidas.AddRange(cervejasVendidasPilsen);
-            _cervejasVendidas.AddRange(cervejasVendidasLagger);
+            cervejasVendidas.AddRange(cervejasVendidasPilsen);
+            cervejasVendidas.AddRange(cervejasVendidasLagger);
+
+            return cervejasVendidas;
         }
 
-        private static TransporteCerveja TransportarCervejas()
+        private static TransporteCerveja TransportarCervejasParaOPdv() 
         {
-            var transporte = new TransporteCerveja(_cervejasVendidas);
+            var transporte = new TransporteCerveja(_listagemCervejasVendidas);
             transporte.Transportar(_quantidadeTotalCervejasVendidas, "Buteco do Trapp");
 
             return transporte;
         }
 
-        private static void EntregarCervejas(TransporteCerveja transporte)
+        private static void EntregarCervejasAoPdv(TransporteCerveja transporte) 
         {
             var entrega = new EntregaCerveja(transporte);
             entrega.Entregar();
