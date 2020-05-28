@@ -7,42 +7,42 @@ namespace LogisticaCervejaTests.cs.Validate
     [TestClass]
     public class ValidacaoMateriaPrimaTest
     {
-        [TestMethod]
-        public void retornar_true_se_conter_todas_as_materias_primas()
+        private MateriaPrima _materiaPrima;
+
+        [TestInitialize]
+        public void setup()
         {
-            // prepare
-            var materiaPrima = new MateriaPrima
+            _materiaPrima = new MateriaPrima
             {
                 Agua = true,
                 Fermento = true,
                 Lupulo = true,
                 MalteCevada = true
             };
+        }
 
+        [TestMethod]
+        public void retornar_true_se_conter_todas_as_materias_primas()
+        {
             // action
-            var contemTodasAsMateriasPrimas = ValidacaoMateriaPrima.MateriaPrimaCervejaContemElementosNecessarios(materiaPrima);
+            var contem = ValidacaoMateriaPrima
+                .MateriaPrimaCervejaContemElementosNecessarios(_materiaPrima);
 
             // verify
-            Assert.IsTrue(contemTodasAsMateriasPrimas);
+            Assert.IsTrue(contem);
         }
 
         [TestMethod]
         public void retornar_false_se_nao_conter_todas_as_materias_primas_necessarias()
         {
             // prepare
-            var materiaPrima = new MateriaPrima
-            {
-                Agua = true,
-                Fermento = true,
-                Lupulo = true,
-                MalteCevada = false
-            };
+            _materiaPrima.MalteCevada = false;
 
             // action
-            var contemTodasAsMateriasPrimas = ValidacaoMateriaPrima.MateriaPrimaCervejaContemElementosNecessarios(materiaPrima);
+            var contem = ValidacaoMateriaPrima.MateriaPrimaCervejaContemElementosNecessarios(_materiaPrima);
 
             // verify
-            Assert.IsFalse(contemTodasAsMateriasPrimas);
+            Assert.IsFalse(contem);
         }
     }
 }
