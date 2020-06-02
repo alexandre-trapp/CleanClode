@@ -4,6 +4,7 @@
     {
         public string VerificarSeNumeroEPar(double? number)
         {
+            // verifica se é diferente de nulo e maior ou igual a zero
             if (number != null && number >= 0)
             {
                 if (number % 2 == 0)
