@@ -4,7 +4,7 @@
     {
         public string VerificarSeNumeroEPar(double? number)
         {
-            if (number != null)
+            if (number != null && number >= 0)
             {
                 if (number % 2 == 0)
                     return $"Número {number} é par";
@@ -17,7 +17,7 @@
 
         public string VerificarSeNumeroEMaiorQue10(double? number)
         {
-            if (number != null)
+            if (number != null && number >= 0)
             {
                 if (number > 10)
                     return $"Número {number} é maior que 10";

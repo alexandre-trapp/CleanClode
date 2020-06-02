@@ -6,7 +6,7 @@
 
         public static bool NumeroValido(double? number)
         {
-            return number != null;
+            return number != null && number >= 0;
         }
     }
 }
