@@ -2,11 +2,17 @@
 {
     public class FuncoesRepetidas
     {
+        /// <summary>
+        /// aqui que a mágica acontece
+        /// </summary>
+        /// <param name="number">número que será verificado se é par</param>
+        /// <returns></returns>
         public string VerificarSeNumeroEPar(double? number)
         {
             // verifica se é diferente de nulo e maior ou igual a zero
             if (number != null && number >= 0)
             {
+                // verifica se numero dividido por 2 o resto for zero, é par
                 if (number % 2 == 0)
                     return $"Número {number} é par";
                 else
