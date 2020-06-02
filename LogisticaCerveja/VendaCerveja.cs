@@ -11,7 +11,7 @@ namespace LogisticaCerveja
             var venda = new CalculoVendaCerveja(cerveja);
             decimal valorVenda = venda.CalcularVenda(quantidade);
 
-            Console.WriteLine($"Vendido {quantidade} cervejas tipo {cerveja.TipoCerveja.GetDisplayName()} - " +
+            Console.WriteLine($"--> Vendido {quantidade} cervejas tipo {cerveja.TipoCerveja.GetDisplayName()} - " +
                 $"Valor total: {valorVenda}");
 
             return CriarListaDeCervejasVendidas(cerveja, quantidade);

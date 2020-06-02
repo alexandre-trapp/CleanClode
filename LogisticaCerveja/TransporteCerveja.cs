@@ -28,8 +28,10 @@ namespace LogisticaCerveja
 
         private void InformarTransporte(int quantidade, string pdvDestino)
         {
-            Console.WriteLine($"Caminhão carregado com {quantidade} cervejas, " +
+            Console.WriteLine($"--> Caminhão carregado com {quantidade} cervejas, " +
                 $"com destino ao PDV {pdvDestino}");
+
+            Console.WriteLine("--> Iniciando transporte");
         }
 
         private bool QuantidadeCondizComAsCervejasIncluidasParaTransporte(int quantidade)

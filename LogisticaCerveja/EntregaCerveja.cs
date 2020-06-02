@@ -21,7 +21,7 @@ namespace LogisticaCerveja
 
         private void InformarEntrega()
         {
-            Console.WriteLine($"Cervejas entregues ao PDV {_transporteCerveja._pdvDestino} com sucesso.");
+            Console.WriteLine($"--> Cervejas entregues ao PDV {_transporteCerveja._pdvDestino} com sucesso.");
         }
     }
 }
