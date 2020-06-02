@@ -1,12 +1,26 @@
 ﻿using System;
 using CleanClode.CodigoSujo;
 using CleanClode.CodigoLimpo;
+using CleanClode.TratamentoErros;
+using Microsoft.Extensions.Logging;
 
 namespace CleanClode
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            ExemplosCodigoLimpoESujo();
+            //ExemploTratamentoErro();
+        }
+
+        private static void ExemploTratamentoErro()
+        {
+            new TratamentoCorreto(new LoggerFactory())
+                .MetodoPrimeiro(dataQuePodeSerNula: null);
+        }
+
+        private static void ExemplosCodigoLimpoESujo()
         {
             Console.WriteLine("Código sujo");
             Console.WriteLine("---------------------------------");
