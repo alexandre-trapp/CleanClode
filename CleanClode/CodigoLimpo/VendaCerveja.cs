@@ -1,6 +1,6 @@
 ﻿namespace CleanClode.CodigoLimpo
 {
-    public class VendaCerveja : IVendaCerveja
+    public sealed class VendaCerveja : IVendaCerveja
     {
         private readonly Cerveja _cerveja;
 
