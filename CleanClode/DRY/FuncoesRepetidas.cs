@@ -12,7 +12,7 @@
             // verifica se é diferente de nulo e maior ou igual a zero
             if (number != null && number >= 0)
             {
-                // verifica se numero dividido por 2 o resto for zero, é par
+                // verifica se o resto (%) da divisão 2 for zero, então é par
                 if (number % 2 == 0)
                     return $"Número {number} é par";
                 else
