@@ -2,6 +2,6 @@
 {
     public interface IVendaCerveja
     {
-        decimal VenderCerveja(int quantidade);
+        decimal CalcularValorVendaCervejaPorQuantidade(int quantidade);
     }
 }

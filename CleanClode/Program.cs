@@ -70,7 +70,7 @@ namespace CleanClode
             var cervejaPilsen = new CervejaPilsen();
             var vendaCervejaPilsen = new VendaCerveja(cervejaPilsen);
 
-            decimal valorDaVenda = vendaCervejaPilsen.VenderCerveja(quantidadeCerveja);
+            decimal valorDaVenda = vendaCervejaPilsen.CalcularValorVendaCervejaPorQuantidade(quantidadeCerveja);
 
             Console.WriteLine($"Cerveja {cervejaPilsen.TipoCerveja}: " +
                 $"quantidade: {quantidadeCerveja} - " +
@@ -84,7 +84,7 @@ namespace CleanClode
             var cervejaLagger = new CervejaLagger();
             var vendaCervejaLagger = new VendaCerveja(cervejaLagger);
 
-            decimal valorDaVenda = vendaCervejaLagger.VenderCerveja(quantidadeCerveja);
+            decimal valorDaVenda = vendaCervejaLagger.CalcularValorVendaCervejaPorQuantidade(quantidadeCerveja);
 
             Console.WriteLine($"Cerveja {cervejaLagger.TipoCerveja}: " +
                 $"quantidade: {quantidadeCerveja} - " +

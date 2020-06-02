@@ -9,7 +9,7 @@
             _cerveja = cerveja;
         }
 
-        public decimal VenderCerveja(int quantidade)
+        public decimal CalcularValorVendaCervejaPorQuantidade(int quantidade)
         {
             return _cerveja.ValorUnitario * quantidade;
         }
