@@ -12,7 +12,7 @@ namespace CleanClode.TratamentoErros
             }
             catch (Exception e)
             {
-                throw new Exception($"erro: {e.Message}");
+                throw new Exception($"erro: {e.Message + e.StackTrace}");
             }
         }
 
@@ -24,7 +24,7 @@ namespace CleanClode.TratamentoErros
             }
             catch(Exception e)
             {
-                throw new Exception($"erro: {e.Message}");
+                throw new Exception($"erro: {e}");
             }
         }
     }
