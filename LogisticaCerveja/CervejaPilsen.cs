@@ -10,7 +10,7 @@ namespace LogisticaCerveja
             if (!ValidacaoMateriaPrima
                 .MateriaPrimaCervejaContemElementosNecessarios(materiaPrima))
             {
-                throw new OperationCanceledException("Não é possível fabricar cerveja sem os elementos necessários");
+                throw new OperationCanceledException("Não é possível fabricar cerveja pilsen sem os elementos necessários");
             }
 
             ValorUnitario = 3.50m;
